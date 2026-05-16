@@ -1,7 +1,7 @@
 #  National Blood Grid & Predictive Inventory System
 **An Automated Cloud-Native Geospatial Analytics Engine on AWS**
 
-1. Architecture Flow and Data Pipeline
+## 1.Architecture Flow and Data Pipeline
    Stage 1: Ingestion and SchedulingExternal Source: The pipeline pulls live nationwide blood bank data from the Data.gov.in REST API.
    Automation Trigger: Amazon EventBridge functions as a serverless cron scheduler to initiate the ingestion loop automatically every 30 minutes.
    Processing Core: AWS Lambda processes the raw data payload out-of-band without managing physical server setups.
@@ -13,8 +13,8 @@
    Stage 3: Visual Analytics and AI InferenceProgrammatic Link: The Streamlit UI Engine initializes a secure programmatic SDK session via Boto3 to read from the DynamoDB data layer.
    Geospatial Layer: Streamlit streams coordinates into a Folium Heatmap to process multi-point clustering layouts smoothly.
    Machine Learning Integration: The dashboard makes real-time REST API calls to an active Amazon SageMaker Canvas endpoint to execute predictive supply-chain demand forecasting.
-
-   2. Core AWS Cloud Framework
+   
+## 2. Core AWS Cloud Framework
 
 *   **AWS Lambda (Python 3.12)**: Serverless processing of external raw JSON data payloads.
 *   **Amazon EventBridge**: Cron scheduler managing hands-free automated pipeline execution loops.
