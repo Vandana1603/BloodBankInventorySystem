@@ -29,4 +29,12 @@
 *   **Visual 3: Healthcare Gap Finder**: Automatically scans and highlights geographical "Care Deserts".
 *   **Advanced Feature: SageMaker AI Audit**: Calls real-time hosted ML instance endpoints for stock alerts.
 
+
+SCREENSHOTS:
+
+<img width="1888" height="832" alt="Screenshot 2026-05-08 115142" src="https://github.com/user-attachments/assets/91a6469f-1d22-4955-9656-f41354524034" />
+<img width="1885" height="832" alt="Screenshot 2026-05-08 115204" src="https://github.com/user-attachments/assets/f99e5e4e-aae2-4475-bf26-b85d9ca0fcc0" />
+<img width="1882" height="832" alt="Screenshot 2026-05-08 115233" src="https://github.com/user-attachments/assets/cc504877-40e7-43e8-b62c-4ae5a6c0b78b" />
+
+
 -[VANDANA K]
