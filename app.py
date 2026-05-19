@@ -19,6 +19,35 @@ st.markdown("""
     </style>
 """, unsafe_content_html=True)
 
+def get_ai_prediction(features):
+    try:
+        session = boto3.Session(
+            aws_access_key_id=st.secrets["AWS_ACCESS_KEY_ID"],
+            aws_secret_access_key=st.secrets["AWS_SECRET_ACCESS_KEY"],
+            region_name='ap-south-1'
+        )
+        runtime = session.client('sagemaker-runtime')
+        
+        payload = ",".join(map(str, features))
+        
+        response = runtime.invoke_endpoint(
+            EndpointName='blood-demand-predictor-v1',
+            ContentType='text/csv',
+            Body=payload
+        )
+        result = json.loads(response['Body'].read().decode('utf-8'))
+        
+        if 'prediction' in result:
+            return float(result['prediction'])
+        elif 'predictions' in result:
+            return float(result['predictions']['score'])
+        else:
+            return float(result)
+            
+    except Exception as e:
+        print(f"SageMaker Runtime Execution Failure: {e}")
+        return None
+
 @st.cache_data(ttl=600)
 def load_and_preprocess_data():
     try:
